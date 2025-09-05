@@ -3,13 +3,64 @@
 :root {
   --background: #ffffff;
   --foreground: #171717;
+
+  /* Primary Color - Dark Blue */
+  --primary-dark-blue: #003459;
+  --primary-dark-blue-80: #002A48;
+  --primary-dark-blue-60: #00528C;
+  --primary-dark-blue-40: #0078CD;
+
+  /* Secondary Color - Mon Yellow */
+  --secondary-yellow: #F7DBA7;
+  --secondary-yellow-80: #EEC77E;
+  --secondary-yellow-60: #F1D092;
+  --secondary-yellow-40: #FCEED5;
+
+  /* Neutral Colors */
+  --neutral-100: #00171F;
+  --neutral-80: #242B33;
+  --neutral-60: #667479;
+  --neutral-40: #99A2A5;
+  --neutral-20: #CCD1D2;
+  --neutral-10: #EBEEEF;
+  --neutral-00: #FDFDFD;
+
+  /* Accent Colors */
+  --accent-pink-red: #FF564F;
+  --accent-green-light: #34C759;
+  --accent-orange-smile: #FF912C;
+  --accent-blue-teen: #00A7E7;
 }
 
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+
+--color-primary-dark-blue: var(--primary-dark-blue);
+--color-primary-dark-blue-80: var(--primary-dark-blue-80);
+--color-primary-dark-blue-60: var(--primary-dark-blue-60);
+--color-primary-dark-blue-40: var(--primary-dark-blue-40);
+
+--color-secondary-yellow: var(--secondary-yellow);
+--color-secondary-yellow-80: var(--secondary-yellow-80);
+--color-secondary-yellow-60: var(--secondary-yellow-60);
+--color-secondary-yellow-40: var(--secondary-yellow-40);
+
+--color-neutral-100: var(--neutral-100);
+--color-neutral-80: var(--neutral-80);
+--color-neutral-60: var(--neutral-60);
+--color-neutral-40: var(--neutral-40);
+--color-neutral-20: var(--neutral-20);
+--color-neutral-10: var(--neutral-10);
+--color-neutral-00: var(--neutral-00);
+
+--color-accent-pink-red: var(--accent-pink-red);
+--color-accent-green-light: var(--accent-green-light);
+--color-accent-orange-smile: var(--accent-orange-smile);
+--color-accent-blue-teen: var(--accent-blue-teen);
+
+--font-sans: var(--font-geist-sans);
+--font-mono: var(--font-geist-mono);
 }
 
 @media (prefers-color-scheme: dark) {
@@ -22,5 +73,9 @@
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-gilroy), sans-serif;
+}
+
+::-webkit-scrollbar {
+    display: none;
 }
