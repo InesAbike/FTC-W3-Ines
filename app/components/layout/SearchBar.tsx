@@ -52,7 +52,7 @@ const SearchBar = () => {
                             className="transform-gpu" // Optimisation GPU
                         >
                             <Link href={`/category/${pet.category.toLowerCase()}/${pet.id}`}>
-                                <div className="group cursor-pointer">
+                                <div className="group cursor-pointer border-b border-b-gray-50/10">
                                     <div className="flex items-center justify-center">
                                         {/* Image Container */}
                                         <div className="rounded-lg relative overflow-hidden w-[100px] h-[100px]">
@@ -95,7 +95,6 @@ const SearchBar = () => {
                                         </div>
                                     </div>
                                 </div>
-                                <hr className="bg-gray-50" />
                             </Link>
                         </div>
                     ))}

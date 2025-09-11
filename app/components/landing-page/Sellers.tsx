@@ -68,6 +68,8 @@ const Sellers = () => {
                     <Image
                         key={index}
                         src={seller}
+                        width={500}
+                        height={500}
                         alt={`Seller ${index}`}
                         className="h-16 w-auto object-contain"
                     />
