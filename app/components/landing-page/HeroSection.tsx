@@ -101,7 +101,7 @@ const HeroSection: React.FC = () => {
 
     
     return (
-        <section className="bg-gradient-to-r from-[#FCEED5] via-[#FCEED5] to-[#FFE7BA] relative">
+        <section className="bg-gradient-to-r rounded-b-2xl from-[#FCEED5] via-[#FCEED5] to-[#FFE7BA] relative">
             <div className="z-20 relative">
                 <Navbar />
             </div>
