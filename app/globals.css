@@ -1,9 +1,6 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
-
   /* Primary Color - Dark Blue */
   --primary-dark-blue: #003459;
   --primary-dark-blue-80: #002A48;
@@ -61,13 +58,6 @@
 
 --font-sans: var(--font-geist-sans);
 --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
 }
 
 body {

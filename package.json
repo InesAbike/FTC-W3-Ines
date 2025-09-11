@@ -12,6 +12,7 @@
     "@heroui/breadcrumbs": "^2.2.21",
     "@heroui/system": "^2.4.21",
     "@heroui/theme": "^2.4.21",
+    "country-flag-icons": "^1.5.20",
     "framer-motion": "^12.23.12",
     "gsap": "^3.13.0",
     "next": "15.5.2",
