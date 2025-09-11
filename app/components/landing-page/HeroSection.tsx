@@ -1,12 +1,105 @@
-''
-import React from 'react';
+'use client'
+import React, { useEffect, useRef } from 'react';
 import Navbar from '../layout/NavBar';
 import { MdOutlinePlayCircle } from 'react-icons/md';
 import Button from '../ui/Button';
 import Image from 'next/image';
-
+import gsap from 'gsap';
 
 const HeroSection: React.FC = () => {
+    const imageContainerRef = useRef<HTMLDivElement>(null);
+    const mainImageRef = useRef<HTMLImageElement>(null);
+    const deco1Ref = useRef<HTMLImageElement>(null);
+    const deco2Ref = useRef<HTMLImageElement>(null);
+    const square1Ref = useRef<HTMLImageElement>(null);
+    const square2Ref = useRef<HTMLImageElement>(null);
+    const square3Ref = useRef<HTMLImageElement>(null);
+
+    useEffect(() => {
+        // Configuration initiale des éléments (invisibles)
+        gsap.set([mainImageRef.current, deco1Ref.current, deco2Ref.current], {
+            opacity: 0,
+            y: 50
+        });
+
+        gsap.set([square1Ref.current, square2Ref.current, square3Ref.current], {
+            opacity: 0,
+            scale: 0,
+            rotation: -180
+        });
+
+        // Timeline principale pour orchestrer les animations
+        const tl = gsap.timeline({ delay: 0.5 });
+
+        // Animation des décorations de fond d'abord
+        tl.to(deco1Ref.current, {
+            opacity: 1,
+            y: 0,
+            duration: 0.8,
+            ease: "power2.out"
+        })
+        .to(deco2Ref.current, {
+            opacity: 1,
+            y: 0,
+            duration: 0.8,
+            ease: "power2.out"
+        }, "-=0.4")
+        // Puis l'image principale
+        .to(mainImageRef.current, {
+            opacity: 1,
+            y: 0,
+            duration: 1,
+            ease: "power2.out"
+        }, "-=0.3")
+        // Enfin les petits carrés avec des délais échelonnés
+        .to(square1Ref.current, {
+            opacity: 1,
+            scale: 1,
+            rotation: 0,
+            duration: 0.6,
+            ease: "back.out(1.7)"
+        }, "-=0.2")
+        .to(square2Ref.current, {
+            opacity: 1,
+            scale: 1,
+            rotation: 0,
+            duration: 0.6,
+            ease: "back.out(1.7)"
+        }, "-=0.4")
+        .to(square3Ref.current, {
+            opacity: 1,
+            scale: 1,
+            rotation: 0,
+            duration: 0.6,
+            ease: "back.out(1.7)"
+        }, "-=0.4");
+
+        // Animation de flottement pour les carrés
+        gsap.to([square1Ref.current, square2Ref.current, square3Ref.current], {
+            y: -10,
+            duration: 2,
+            ease: "power1.inOut",
+            yoyo: true,
+            repeat: -1,
+            stagger: 0.3
+        });
+
+        // Animation subtile de balancement pour l'image principale
+        gsap.to(mainImageRef.current, {
+            rotation: 2,
+            duration: 3,
+            ease: "power1.inOut",
+            yoyo: true,
+            repeat: -1
+        });
+
+        // Nettoyage
+        return () => {
+            tl.kill();
+        };
+    }, []);
+
+    
     return (
         <section className="bg-gradient-to-r from-[#FCEED5] via-[#FCEED5] to-[#FFE7BA] relative">
             <div className="z-20 relative">
@@ -47,13 +140,55 @@ const HeroSection: React.FC = () => {
                     </div>
 
                     {/* Image section */}
-                    <div className="relative flex items-end justify-start h-full">
-                        <Image src="/images/decorations/hero-img-deco-1.svg" alt="Hero" width={520} height={300} className='absolute bottom-0 left-0 z-0 md:w-[500px] md:h-[300px] sm:w-[350px] w-[250px] h-[150px]' />
-                        <Image src="/images/decorations/hero-img-deco-2.svg" alt="Hero" width={450} height={600} className='absolute bottom-0 left-0 md:w-[600px] md:h-[350px] sm:w-[400px] w-full sm:h-[250px] h-[250px] z-10' />
-                        <Image src="/images/women-with-dog.png" alt="Hero" width={300} height={300} className='z-20 md:h-[450px] md:w-[650px] h-[300px] sm:w-[400px] w-full' />
-                        <Image src="/images/decorations/square-1.png" alt="square decoration" width={100} height={100} className="absolute top-26 left-18 w-6 h-6 z-20 hidden lg:block"></Image>
-                        <Image src="/images/decorations/square-2.png" alt="square decoration" width={100} height={100} className="absolute top-24 left-18 w-8 h-8 z-10 hidden lg:block"></Image>
-                        <Image src="/images/decorations/square-3.png" alt="square decoration" width={100} height={100} className="absolute top-14 left-30 w-4 h-4 hidden lg:block"></Image>
+                    <div ref={imageContainerRef} className="relative flex items-end justify-start h-full">
+                        <Image 
+                            ref={deco1Ref}
+                            src="/images/decorations/hero-img-deco-1.svg" 
+                            alt="Hero" 
+                            width={520} 
+                            height={300} 
+                            className='absolute bottom-0 left-0 z-0 md:w-[500px] md:h-[300px] sm:w-[350px] w-[250px] h-[150px]' 
+                        />
+                        <Image 
+                            ref={deco2Ref}
+                            src="/images/decorations/hero-img-deco-2.svg" 
+                            alt="Hero" 
+                            width={450} 
+                            height={600} 
+                            className='absolute bottom-0 left-0 md:w-[600px] md:h-[350px] sm:w-[400px] w-full sm:h-[250px] h-[250px] z-10' 
+                        />
+                        <Image 
+                            ref={mainImageRef}
+                            src="/images/women-with-dog.png" 
+                            alt="Hero" 
+                            width={300} 
+                            height={300} 
+                            className='z-20 md:h-[450px] md:w-[650px] h-[300px] sm:w-[400px] w-full' 
+                        />
+                        <Image 
+                            ref={square1Ref}
+                            src="/images/decorations/square-1.png" 
+                            alt="square decoration" 
+                            width={100} 
+                            height={100} 
+                            className="absolute top-26 left-18 w-6 h-6 z-20 hidden lg:block"
+                        />
+                        <Image 
+                            ref={square2Ref}
+                            src="/images/decorations/square-2.png" 
+                            alt="square decoration" 
+                            width={100} 
+                            height={100} 
+                            className="absolute top-24 left-18 w-8 h-8 z-10 hidden lg:block"
+                        />
+                        <Image 
+                            ref={square3Ref}
+                            src="/images/decorations/square-3.png" 
+                            alt="square decoration" 
+                            width={100} 
+                            height={100} 
+                            className="absolute top-14 left-30 w-4 h-4 hidden lg:block"
+                        />
                     </div>
                 </div>
             </div>
