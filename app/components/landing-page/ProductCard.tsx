@@ -10,11 +10,9 @@ interface ProductCardProps extends Product {
 }
 
 const ProductCard: React.FC<ProductCardProps> = ({
-    id,
     name,
     image,
     price,
-    currency = 'VND',
     type,
     size,
     tags = [],

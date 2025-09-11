@@ -2,6 +2,7 @@
 import { useEffect, useRef } from "react";
 import { gsap } from "gsap";
 import Button from "../ui/Button";
+import Image from "next/image";
 
 const sellers = [
     "/logos/seller-1.svg",
@@ -63,9 +64,8 @@ const Sellers = () => {
                 className="flex space-x-8"
                 style={{ whiteSpace: "nowrap" }}
             >
-                {/* Doublement pour l'effet infini */}
                 {sellers.concat(sellers).map((seller, index) => (
-                    <img
+                    <Image
                         key={index}
                         src={seller}
                         alt={`Seller ${index}`}

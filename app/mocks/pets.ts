@@ -1,4 +1,4 @@
-import { RelatedPet, Pet } from "../types/pet";
+import {Pet } from "../types/pet";
 
 // Mock complet des produits avec détails
 export const petsMocks: Pet[] = [

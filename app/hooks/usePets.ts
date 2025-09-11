@@ -14,7 +14,7 @@ interface UsePetsResult {
   reset: () => void;
 }
 
-const PAGE_SIZE = 8; 
+const PAGE_SIZE = 8;
 
 export function usePets(): UsePetsResult {
   const [pets, setPets] = useState<Pet[]>([]);
@@ -61,7 +61,8 @@ export function usePets(): UsePetsResult {
 
         return paginated;
       } catch (err) {
-        setError("Erreur lors du chargement des animaux (mock)");
+        console.error("Erreur lors du chargement des chiots :", err);
+        setError("Erreur lors du chargement des chiots (mock)");
         return [];
       } finally {
         setLoading(false);
@@ -75,15 +76,15 @@ export function usePets(): UsePetsResult {
     setError(null);
 
     try {
-      await simulateDelay(300); 
-      
+      await simulateDelay(300);
+
       const pet = petsMocks.find(pet => pet.id === id) || null;
-      
+
       if (!pet) {
         setError('Animal non trouvé');
         return null;
       }
-      
+
       return pet;
     } catch (err) {
       setError('Erreur lors du chargement des détails de l\'animal');

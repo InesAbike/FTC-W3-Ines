@@ -1,7 +1,6 @@
 'use client'
 import { useEffect } from "react";
 import { useProducts } from "../../hooks/useProducts";
-import { BsChevronRight } from "react-icons/bs";
 import Button from "../ui/Button";
 import ProductCard from "./ProductCard";
 
@@ -72,7 +71,7 @@ const ProductsSection: React.FC = () => {
                 {!hasMore && products.length > 8 && (
                     <div className="text-center">
                         <p className="text-neutral-60">
-                            You've seen all our available products!
+                            You&apos;ve seen all our available products!
                         </p>
                     </div>
                 )}

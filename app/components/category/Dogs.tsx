@@ -1,15 +1,14 @@
 import React, { useEffect } from 'react'
-import Button from '../ui/Button'
 import { usePets } from '@/hooks/usePets'
 import PetCard from '../landing-page/PetCard'
 import Link from 'next/link'
 
 const SmallDogs = () => {
 
-    const { fetchPets, pets, loading, error } = usePets()
+    const { fetchPets, pets } = usePets()
     useEffect(() => {
         fetchPets(1)
-    }, [pets])
+    }, [])
     return (
         <div className='md:py-12 py-6 bg-neutral-00'>
             <div className='max-w-7xl mx-auto px-4 sm:px-6 lg:px-8'>

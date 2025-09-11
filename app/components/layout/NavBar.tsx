@@ -1,6 +1,6 @@
 'use client'
 import React, { useState } from 'react';
-import { FiSearch, FiMenu, FiX, FiChevronDown, FiGlobe } from 'react-icons/fi';
+import { FiSearch, FiMenu, FiX, FiChevronDown} from 'react-icons/fi';
 import Image from 'next/image';
 import Link from 'next/link';
 import { navLinks } from '@/constants';

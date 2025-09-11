@@ -13,7 +13,7 @@ interface UseCustomersResult {
   reset: () => void;
 }
 
-const PAGE_SIZE = 4; 
+const PAGE_SIZE = 4;
 
 export function useCustomers(): UseCustomersResult {
   const [customers, setCustomers] = useState<Customer[]>([]);
@@ -53,7 +53,8 @@ export function useCustomers(): UseCustomersResult {
 
         return paginated;
       } catch (err) {
-        setError("Erreur lors du chargement des animaux (mock)");
+        console.error("Erreur lors du chargement des articles :", err);
+        setError("Erreur lors du chargement des articles (mock)");
         return [];
       } finally {
         setLoading(false);

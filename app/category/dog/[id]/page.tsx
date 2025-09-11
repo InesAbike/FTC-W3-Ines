@@ -1,8 +1,7 @@
 'use client'
 import Button from '@/components/ui/Button';
-import HeartIcon from '@/components/ui/HeartIcon';
 import React, { useEffect, useState } from 'react';
-import { FaShoppingBag, FaFacebook, FaTwitter, FaInstagram, FaYoutube, FaChevronLeft, FaChevronRight } from "react-icons/fa";
+import { FaFacebook, FaTwitter, FaInstagram, FaYoutube, FaChevronLeft, FaChevronRight } from "react-icons/fa";
 import { IoChatboxEllipsesOutline, IoShareSocialOutline } from 'react-icons/io5';
 import { useCustomers } from '@/hooks/useCustumers';
 import { usePets } from '@/hooks/usePets';
@@ -120,7 +119,7 @@ const ProductDetail = ({ params }: { params: { id: string } }) => {
             <section className="max-w-7xl mx-auto px-6 py-12">
                 <div className="text-center">
                     <h2 className="text-2xl font-bold text-gray-800 mb-4">Animal non trouvé</h2>
-                    <p className="text-gray-600">L'animal que vous recherchez n'existe pas ou n'est plus disponible.</p>
+                    <p className="text-gray-600">L&apos;animal que vous recherchez n&apos;existe pas ou n&apos;est plus disponible.</p>
                 </div>
             </section>
         );
@@ -148,7 +147,7 @@ const ProductDetail = ({ params }: { params: { id: string } }) => {
                                 />
                             ) : (
                                 <div className="w-full h-full bg-gray-200 flex items-center justify-center">
-                                    <span className="text-gray-500">Pas d'image disponible</span>
+                                    <span className="text-gray-500">Pas d&apos;image disponible</span>
                                 </div>
                             )}
 
@@ -334,7 +333,7 @@ const ProductDetail = ({ params }: { params: { id: string } }) => {
                 <div className="mt-16">
                     <div className="flex justify-between items-center mb-6">
                         <div>
-                            <div className="text-sm text-black mb-2">What's new?</div>
+                            <div className="text-sm text-black mb-2">What&apos;s new?</div>
                             <Link href="/category/dog">
                                 <h2 className="text-xl font-bold text-primary-dark-blue cursor-pointer">See More Puppies</h2>
                             </Link>

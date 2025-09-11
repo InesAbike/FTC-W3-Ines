@@ -14,14 +14,11 @@ const Footer: React.FC = () => {
 
     setIsSubscribing(true);
 
-    // Simulation d'appel API
     await new Promise(resolve => setTimeout(resolve, 1000));
 
-    // Reset form
     setEmail('');
     setIsSubscribing(false);
 
-    // Ici vous pourriez ajouter une notification de succès
     alert('Subscription successful!');
   };
 
@@ -43,7 +40,7 @@ const Footer: React.FC = () => {
               {/* Newsletter Text */}
               <div className="text-center lg:text-left col-span-1">
                 <h3 className="text-white text-lg sm:text-xl font-semibold">
-                  Register Now So You Don't Miss
+                  Register Now So You Don&apos;t Miss
                 </h3>
                 <p className="text-white text-lg sm:text-xl font-semibold">
                   Our Programs
@@ -72,11 +69,10 @@ const Footer: React.FC = () => {
               </div>
             </div>
           </div>
-      {/* Main Footer Content */}
+
       <div className="max-w-7xl mx-auto py-8">
         <div className="flex flex-col lg:flex-row justify-between items-center gap-6">
 
-          {/* Left Side - Navigation */}
           <div className="flex flex-wrap justify-center lg:justify-start gap-6 lg:gap-8">
             {
               navLinks.map((link) => (
@@ -87,7 +83,6 @@ const Footer: React.FC = () => {
             }
           </div>
 
-          {/* Right Side - Social Media */}
           <div className="flex items-center space-x-4">
             {
               socialLinks.map((link) => (

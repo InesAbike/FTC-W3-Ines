@@ -61,7 +61,8 @@ export function useProducts(): UseProductsResult {
 
         return paginated;
       } catch (err) {
-        setError("Erreur lors du chargement des animaux (mock)");
+        console.error("Erreur lors du chargement des produits :", err);
+  setError("Erreur lors du chargement des produits (mock)");
         return [];
       } finally {
         setLoading(false);

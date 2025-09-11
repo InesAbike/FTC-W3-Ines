@@ -3,7 +3,6 @@ import { FiSearch } from "react-icons/fi";
 import { usePets } from "@/hooks/usePets";
 import Link from "next/link";
 import Image from "next/image";
-import { div } from "framer-motion/client";
 
 const SearchBar = () => {
     const { loading, fetchPets, pets, reset } = usePets();

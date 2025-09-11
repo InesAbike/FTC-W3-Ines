@@ -9,7 +9,6 @@ interface ArticleCardProps extends Article {
 }
 
 const ArticleCard: React.FC<ArticleCardProps> = ({
-  id,
   title,
   image,
   category,

@@ -4,19 +4,16 @@ import { usePets } from "../../hooks/usePets";
 import PetCard from "./PetCard";
 import Button from "../ui/Button";
 import Link from "next/link";
-import { gsap } from "gsap";
 
 const PetsSection: React.FC = () => {
-    const { pets, loading, hasMore, loadMore, fetchPets } = usePets();
+    const { pets, loading, fetchPets } = usePets();
     const containerRef = useRef<HTMLDivElement>(null);
     const cardsRefs = useRef<(HTMLDivElement | null)[]>([]);
 
-    // Charger la première page au montage
     useEffect(() => {
         fetchPets(1);
     }, [fetchPets]);
 
-    // Référence pour les cartes
     const setCardRef = (el: HTMLDivElement | null, index: number) => {
         cardsRefs.current[index] = el;
     };
@@ -24,13 +21,12 @@ const PetsSection: React.FC = () => {
     return (
         <section>
             <div className="md:py-12 py-6 bg-neutral-00 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                {/* Header Section avec animation au mount */}
                 <div 
                     ref={containerRef}
                     className="flex items-center justify-between mb-8"
                 >
                     <div>
-                        <p className="text-black text-base font-medium mb-1">What's new?</p>
+                        <p className="text-black text-base font-medium mb-1">What&apos;s new?</p>
                         <h2 className="text-xl lg:text-2xl font-bold text-primary-dark-blue">
                             Take A Look At Some Of Our Pets
                         </h2>
@@ -49,7 +45,6 @@ const PetsSection: React.FC = () => {
                   </Link>
                 </div>
 
-                {/* Grille des animaux */}
                 <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 mb-8">
                     {pets.map((pet, index) => (
                         <div
@@ -69,7 +64,6 @@ const PetsSection: React.FC = () => {
                     ))}
                 </div>
 
-                {/* États de chargement et messages */}
                 {loading && (
                     <div className="text-center py-8">
                         <div className="inline-flex items-center gap-2 text-neutral-600">

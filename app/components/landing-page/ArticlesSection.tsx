@@ -1,7 +1,6 @@
 'use client'
 import { useEffect } from "react";
 import { useArticles } from "../../hooks/useArticles";
-import { BsChevronRight } from "react-icons/bs";
 import ArticleCard from "./ArticleCard";
 import Button from "../ui/Button";
 
@@ -9,7 +8,6 @@ import Button from "../ui/Button";
 const ArticlesSection: React.FC = () => {
     const { articles, loading, hasMore, loadMore, fetchArticles } = useArticles();
 
-    // Charger la première page au montage
     useEffect(() => {
         fetchArticles(1);
     }, [fetchArticles]);
@@ -38,11 +36,10 @@ const ArticlesSection: React.FC = () => {
                     )}
                 </div>
 
-                {/* Grille des animaux */}
                 <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 mb-8">
                     {articles.map((article, index) => (
                         <div
-                            key={`${article.id}-${index}`} // 👈 sécurise la clé car certains IDs se répètent dans ton mock
+                            key={`${article.id}-${index}`}
                             className="animate-fadeIn"
                             style={{ animationDelay: `${(index % 8) * 100}ms` }}
                         >
@@ -51,7 +48,6 @@ const ArticlesSection: React.FC = () => {
                     ))}
                 </div>
 
-                {/* Bouton Load More centré */}
                 {hasMore && (
                     <div className="text-center sm:hidden block">
                         <Button
@@ -69,16 +65,14 @@ const ArticlesSection: React.FC = () => {
                     </div>
                 )}
 
-                {/* Message de fin */}
                 {!hasMore && articles.length > 8 && (
                     <div className="text-center">
                         <p className="text-neutral-60">
-                            You've seen all our available articles!
+                            You&apos;ve seen all our available articles!
                         </p>
                     </div>
                 )}
 
-                {/* Indicateur du nombre total */}
                 <div className="text-center mt-6">
                     <p className="text-sm text-neutral-60">
                         Showing {articles.length} articles {hasMore && "of many available"}
@@ -86,7 +80,6 @@ const ArticlesSection: React.FC = () => {
                 </div>
             </div>
 
-            {/* CSS pour l'animation fadeIn */}
             <style jsx>{`
         @keyframes fadeIn {
           from { opacity: 0; transform: translateY(20px); }

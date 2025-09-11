@@ -14,7 +14,7 @@ interface UseArticlesResult {
 }
 
 
-const PAGE_SIZE = 3; 
+const PAGE_SIZE = 3;
 
 export function useArticles(): UseArticlesResult {
   const [articles, setArticles] = useState<Article[]>([]);
@@ -35,19 +35,15 @@ export function useArticles(): UseArticlesResult {
       try {
         await simulateDelay();
 
-        // Applique la recherche
-        const filtered =  articlesMocks.filter(
+        const filtered = articlesMocks.filter(
           (p) =>
             p.title.toLowerCase().includes(searchQuery.toLowerCase()) ||
             p.excerpt.toLowerCase().includes(searchQuery.toLowerCase())
         );
 
-        // Pagination
         const start = (pageNumber - 1) * PAGE_SIZE;
         const end = start + PAGE_SIZE;
         const paginated = filtered.slice(start, end);
-
-        // Mise à jour de l'état
         if (pageNumber === 1) {
           setArticles(paginated);
         } else {
@@ -60,7 +56,8 @@ export function useArticles(): UseArticlesResult {
 
         return paginated;
       } catch (err) {
-        setError("Erreur lors du chargement des animaux (mock)");
+        console.error("Erreur lors du chargement des articles :", err);
+        setError("Erreur lors du chargement des articles (mock)");
         return [];
       } finally {
         setLoading(false);
