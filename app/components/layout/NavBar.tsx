@@ -65,7 +65,7 @@ const Navbar: React.FC = () => {
         <div className="flex items-center justify-between gap-16 h-16">
           <button
             onClick={toggleMobileMenu}
-            className="md:hidden p-2 text-primary hover:text-primary/80 transition-colors"
+            className="md:hidden p-2 text-primary-dark-blue hover:text-primary-dark-blue/80 transition-colors"
           >
             {isMobileMenuOpen ? (
               <FiX className="h-5 w-5" />
@@ -155,35 +155,16 @@ const Navbar: React.FC = () => {
                 </div>
               )}
             </div>
-       
-
-
-            {/* Mobile Menu Button */}
-
           </div>
         </div>
 
         {/* Mobile Menu */}
         {isMobileMenuOpen && (
-          <div className="md:hidden absolute top-16 left-0 right-0 bg-secondary border-t border-neutral-30 shadow-lg z-40">
+          <div className="md:hidden absolute top-16 left-0 right-0 border-t border-neutral-30 z-40">
             <div className="px-4 py-4">
 
-              {/* Mobile Search */}
-              <div className="lg:hidden">
-                <div className="relative">
-                  <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
-                    <FiSearch className="h-4 w-4 text-neutral-40" />
-                  </div>
-                  <input
-                    type="text"
-                    placeholder="Search something here!"
-                    className="w-full pl-10 pr-4 py-2 rounded-full bg-white text-neutral-80 placeholder:text-neutral-40 focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent text-sm"
-                  />
-                </div>
-              </div>
-
               {/* Mobile Navigation Links */}
-              <div className="flex flex-col gap-4 mt-4">
+              <div className="flex flex-col gap-4 mt-4 text-white">
                 {navLinks.map((link) => (
                   <Link
                     key={link.label}
@@ -217,7 +198,7 @@ const Navbar: React.FC = () => {
       {/* Overlay for mobile menu */}
       {isMobileMenuOpen && (
         <div
-          className="fixed inset-0 bg-black/25 z-30 md:hidden"
+          className="fixed inset-0 bg-primary-dark-blue z-30 md:hidden"
           onClick={toggleMobileMenu}
         />
       )}

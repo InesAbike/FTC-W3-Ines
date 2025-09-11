@@ -48,12 +48,12 @@ const HeroSection: React.FC = () => {
 
                     {/* Image section */}
                     <div className="relative flex items-end justify-start h-full">
-                        <Image src="/images/hero-img-deco-1.png" alt="Hero" width={520} height={300} className='absolute bottom-0 left-0 z-0 md:w-[500px] md:h-[300px] sm:w-[350px] w-[250px] h-[150px]' />
-                        <Image src="/images/hero-img-deco-2.png" alt="Hero" width={450} height={600} className='absolute bottom-0 left-0 md:w-[600px] md:h-[350px] sm:w-[400px] w-full sm:h-[250px] h-[250px] z-10' />
+                        <Image src="/images/decorations/hero-img-deco-1.svg" alt="Hero" width={520} height={300} className='absolute bottom-0 left-0 z-0 md:w-[500px] md:h-[300px] sm:w-[350px] w-[250px] h-[150px]' />
+                        <Image src="/images/decorations/hero-img-deco-2.svg" alt="Hero" width={450} height={600} className='absolute bottom-0 left-0 md:w-[600px] md:h-[350px] sm:w-[400px] w-full sm:h-[250px] h-[250px] z-10' />
                         <Image src="/images/women-with-dog.png" alt="Hero" width={300} height={300} className='z-20 md:h-[450px] md:w-[650px] h-[300px] sm:w-[400px] w-full' />
-                        <Image src="/images/square-1.png" alt="square decoration" width={100} height={100} className="absolute top-26 left-18 w-6 h-6 z-20 hidden lg:block"></Image>
-                        <Image src="/images/square-2.png" alt="square decoration" width={100} height={100} className="absolute top-24 left-18 w-8 h-8 z-10 hidden lg:block"></Image>
-                        <Image src="/images/square-3.png" alt="square decoration" width={100} height={100} className="absolute top-14 left-30 w-4 h-4 hidden lg:block"></Image>
+                        <Image src="/images/decorations/square-1.png" alt="square decoration" width={100} height={100} className="absolute top-26 left-18 w-6 h-6 z-20 hidden lg:block"></Image>
+                        <Image src="/images/decorations/square-2.png" alt="square decoration" width={100} height={100} className="absolute top-24 left-18 w-8 h-8 z-10 hidden lg:block"></Image>
+                        <Image src="/images/decorations/square-3.png" alt="square decoration" width={100} height={100} className="absolute top-14 left-30 w-4 h-4 hidden lg:block"></Image>
                     </div>
                 </div>
             </div>
