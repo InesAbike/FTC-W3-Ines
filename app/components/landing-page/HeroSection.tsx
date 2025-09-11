@@ -12,8 +12,8 @@ const HeroSection: React.FC = () => {
             <div className="z-20 relative">
                 <Navbar />
             </div>
-            <Image src="/images/top-decoration.png" alt="top decoration" width={300} height={200} className="absolute top-0 left-0 z-0"></Image>
-            <Image src="/images/bottom-decoration.png" alt="bottom decoration" width={500} height={200} className="absolute bottom-0 left-20 hidden lg:block"></Image>
+            <Image src="/images/decorations/top-decoration.png" alt="top decoration" width={300} height={200} className="absolute top-0 left-0 z-0"></Image>
+            <Image src="/images/decorations/bottom-decoration.png" alt="bottom decoration" width={500} height={200} className="absolute bottom-0 left-20 hidden lg:block"></Image>
 
             <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-8 lg:pt-16">
                 <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-end">
@@ -24,7 +24,7 @@ const HeroSection: React.FC = () => {
                                 <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-primary-dark-blue-80 leading-tight relative z-10">
                                     One More Friend
                                 </h1>
-                                <Image src="/images/title-decoration.png" alt="Hero" width={70} height={70} className="absolute -left-4 top-0 hidden lg:block z-0" />
+                                <Image src="/images/decorations/title-decoration.png" alt="Hero" width={70} height={70} className="absolute -left-4 top-0 hidden lg:block z-0" />
                             </div>
                             <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-primary-dark-blue-80 leading-tight">
                                 Thousands More Fun!

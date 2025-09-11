@@ -8,19 +8,19 @@ const CTA_1 = () => {
             <section className='md:py-12 py-6 sm:px-6 lg:px-8 px-4 max-w-7xl mx-auto'>
                 <div className='bg-primary-dark-blue rounded-2xl relative overflow-hidden'>
                     <Image
-                        src="/images/cta1-decoration-1.png"
+                        src="/images/decorations/cta1-decoration-1.png"
                         alt="cta-1-decoration"
                         width={500}
                         height={500}
                         className="absolute bottom-0 left-0 md:w-1/2 w-full z-10" />
                     <Image
-                        src="/images/cta1-decoration-2.png"
+                        src="/images/decorations/cta1-decoration-2.png"
                         alt="cta-1-decoration"
                         width={500}
                         height={500}
                         className="absolute top-0 right-0 z-10 w-2/3 h-full md:flex hidden" />
                     <Image
-                        src="/images/cta1-decoration-3.png"
+                        src="/images/decorations/cta1-decoration-3.png"
                         alt="cta-2-decoration"
                         width={500}
                         height={500}

@@ -8,7 +8,7 @@ const CTA = () => {
         <div className="lg:px-8 sm:px-6 px-4">
             <div className='bg-gradient-to-r from-[#FCEED5] via-[#FCEED5] to-[#FFE7BA] rounded-2xl max-w-7xl mx-auto relative overflow-hidden'>
                 <Image
-                    src="/images/cta-decoration.png"
+                    src="/images/decorations/cta-decoration.png"
                     alt="cta-1-decoration"
                     width={500}
                     height={500}

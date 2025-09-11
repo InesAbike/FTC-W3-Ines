@@ -40,13 +40,13 @@ const CTA_2 = () => {
         <section className='md:py-12 py-6 sm:px-6 lg:px-8 px-4 max-w-7xl mx-auto'>
                 <div className='bg-[#ffb775] rounded-2xl relative overflow-hidden'>
                     <Image
-                        src="/images/cta2-decoration-1.png"
+                        src="/images/decorations/cta2-decoration-1.png"
                         alt="cta-1-decoration"
                         width={500}
                         height={500}
                         className="absolute bottom-0 left-0 h-full w-1/2 z-10" />
                     <Image
-                        src="/images/cta2-decoration-2.png"
+                        src="/images/decorations/cta2-decoration-2.png"
                         alt="cta-1-decoration"
                         width={500}
                         height={500}
