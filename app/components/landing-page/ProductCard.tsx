@@ -3,6 +3,7 @@
 import React from 'react';
 import Image from 'next/image';
 import { Product } from '@/types/product';
+import { useCurrency } from '@/contexts/CurrencyContext';
 
 interface ProductCardProps extends Product {
     className?: string;
@@ -19,10 +20,11 @@ const ProductCard: React.FC<ProductCardProps> = ({
     tags = [],
     className = ''
 }) => {
-    const formatPrice = (price: number, currency: string) => {
-        return `${price.toLocaleString()} ${currency}`;
-    };
-
+    const { formatPrice: formatCurrencyPrice } = useCurrency();
+    const formatPrice = (priceObj: { amount: number; currency: string } | undefined) => {
+        if (!priceObj) return 'Prix non disponible';
+        return formatCurrencyPrice(priceObj.amount);
+      };
     return (
         <div className={`h-full bg-white p-2 rounded-xl shadow-sm border border-neutral-20 overflow-hidden hover:shadow-md transition-shadow duration-300 ${className}`}>
             {/* Image Container */}
@@ -53,17 +55,21 @@ const ProductCard: React.FC<ProductCardProps> = ({
                             <span className="font-bold">{type}</span>
                         </div>
                         <div className="w-1 h-1 bg-neutral-60 rounded-full"></div>
-                        <div className="flex items-center space-x-1">
+                        {
+                            size && 
+                            <div className="flex items-center space-x-1">
                             <span className="font-medium">Size:</span>
                             <span className="font-bold">{size}</span>
                         </div>
+                        }
+
                     </div>
                 </div>
 
                 {/* Price */}
                 <div className="text-left">
                     <p className="text-neutral-100 font-bold text-sm">
-                        {formatPrice(price, currency)}
+                    {formatPrice({ amount: price, currency: 'VND' })}
                     </p>
                 </div>
                 <div className="flex items-center flex-wrap gap-1 bg-secondary-yellow-40 p-2 text-primary-dark-blue font-bold text-sm rounded-lg">

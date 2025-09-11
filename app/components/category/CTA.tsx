@@ -37,7 +37,7 @@ const CTA = () => {
                         </p>
 
                         {/* Boutons d'action */}
-                        <div className="flex flex-row gap-4 sm:justify-end justify-center w-full">
+                        <div className="flex sm:flex-row flex-col gap-4 sm:justify-end justify-center w-full">
                             <Button variant='outline' size='md' className='md:border-white md:text-white text-neutral-80 border-neutral-80' >
                                 <span className="flex items-center gap-2">View Intro
                                     <MdOutlinePlayCircle size={20} />

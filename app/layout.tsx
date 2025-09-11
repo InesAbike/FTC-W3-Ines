@@ -3,6 +3,7 @@ import localFont from "next/font/local";
 import "./globals.css";
 import ConditionalNavbar from "./components/layout/ConditionalNavBar";
 import Footer from "./components/layout/Footer";
+import { CurrencyProvider } from "./contexts/CurrencyContext";
 
 const gilroy = localFont({
   src: [
@@ -60,9 +61,12 @@ export default function RootLayout({
       <body
         className={`${gilroy.variable} antialiased text-primary-dark-blue`}
       >
+                <CurrencyProvider>
+
         <ConditionalNavbar />
         {children}
         <Footer />
+        </CurrencyProvider>
       </body>
     </html>
   );

@@ -40,13 +40,13 @@ const ProductDetail = ({ params }: { params: { id: string } }) => {
     // Navigation du carousel d'images
     const nextImage = () => {
         if (currentPet?.images) {
-            setSelectedImage((prev) => (prev + 1) % currentPet.images.length);
+            setSelectedImage((prev) => (prev + 1) % (currentPet.images?.length || 1));
         }
     };
 
     const prevImage = () => {
         if (currentPet?.images) {
-            setSelectedImage((prev) => (prev - 1 + currentPet.images.length) % currentPet.images.length);
+            setSelectedImage((prev) => (prev - 1 + (currentPet.images?.length || 0)) % (currentPet.images?.length || 1));
         }
     };
 
@@ -74,7 +74,7 @@ const ProductDetail = ({ params }: { params: { id: string } }) => {
 
     // Génération du breadcrumb
     const generateBreadcrumb = (pet: Pet) => {
-        return `Home > ${pet.category} > ${pet.size || 'Small'} ${pet.category} > ${pet.name}`;
+        return `Home > ${pet.category} > ${pet.category} > ${pet.name}`;
     };
 
     // Affichage de l'état de chargement

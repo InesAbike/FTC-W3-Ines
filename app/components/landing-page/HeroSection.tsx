@@ -36,7 +36,7 @@ const HeroSection: React.FC = () => {
                         </p>
 
                         {/* Boutons d'action */}
-                        <div className="flex flex-row gap-4 pt-4 w-full">
+                        <div className="flex item-start sm:flex-row flex-col gap-4 pt-4 w-full">
                             <Button variant='outline' size='md' >
                                 <span className="flex items-center gap-2">View Intro
                                     <MdOutlinePlayCircle size={20} />
