@@ -25,13 +25,13 @@ const Navbar: React.FC = () => {
   const getCurrencyData = (curr: Currency) => {
     switch (curr) {
       case 'VND':
-        return { flag: '🇻🇳', code: 'VND' };
+        return { flag: '/images/flags/flag-of-vietnam.png', code: 'VND' };
       case 'USD':
-        return { flag: '🇺🇸', code: 'USD' };
+        return { flag: '/images/flags/flag-of-usa.jpg', code: 'USD' };
       case 'EUR':
-        return { flag: '🇪🇺', code: 'EUR' };
+        return { flag: '/images/flags/flag-of-ue.png', code: 'EUR' };
       default:
-        return { flag: '🇻🇳', code: 'VND' };
+        return { flag: '/images/flags/flag-of-vietnam.png', code: 'VND' };
     }
   };
 
@@ -111,9 +111,13 @@ const Navbar: React.FC = () => {
                 onClick={toggleLanguageDropdown}
                 className="flex items-center gap-1 text-primary hover:text-primary/80 transition-colors"
               >
-                <div className="w-4 h-4 rounded-full flex items-center justify-center">
-                  <span className="text-white text-xs font-bold">{currentCurrency.flag}</span>
-                </div>
+<Image
+  src={currentCurrency.flag}
+  alt={currentCurrency.code}
+  width={20}
+  height={20}
+  className='w-4 h-4 rounded-full'
+/>
                 <span className="font-medium text-sm">{currentCurrency.code}</span>
                 <FiChevronDown className="h-3 w-3" />
               </button>

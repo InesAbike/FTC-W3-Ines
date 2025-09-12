@@ -72,7 +72,7 @@ const CTA_2 = () => {
                                 </h2>
                             </div>
 
-                            <p className="text-sm text-neutral-80 max-w-lg leading-relaxed font-medium">
+                            <p className="text-lg text-neutral-80 max-w-lg leading-relaxed font-medium">
                                 Adopt a pet and give it a home,
                                 it will be love you back unconditionally.
                             </p>

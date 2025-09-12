@@ -26,7 +26,7 @@ const SearchBar = () => {
     };
 
     return (
-        <div className="relative w-full">
+        <div className="relative">
             <div className="flex items-center gap-2 w-full p-4 py-2 rounded-full bg-white text-neutral-80">
                 <div className="flex items-center pointer-events-none">
                     <FiSearch className="h-4 w-4 text-neutral-40" />

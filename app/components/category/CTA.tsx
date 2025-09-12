@@ -32,7 +32,7 @@ const CTA = () => {
                             </h2>
                         </div>
 
-                        <p className="text-xs md:text-neutral-20 text-neutral-80  max-w-lg font-medium leading-relaxed">
+                        <p className="text-lg md:text-neutral-20 text-neutral-80  max-w-lg font-medium leading-relaxed">
                             Having a pet means you have more joy, a new friend, a happy person who will always be with you to have fun. We have 200+ different pets that can meet your needs!
                         </p>
 

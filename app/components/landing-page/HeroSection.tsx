@@ -124,7 +124,7 @@ const HeroSection: React.FC = () => {
                             </h2>
                         </div>
 
-                        <p className="text-lg sm:text-xl text-neutral-80 max-w-lg leading-relaxed">
+                        <p className="text-lg text-neutral-80 max-w-lg">
                             Having a pet means you have more joy, a new friend, a happy person who will always be with you to have fun. We have 200+ different pets that can meet your needs!
                         </p>
 
