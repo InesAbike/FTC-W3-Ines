@@ -73,7 +73,7 @@ const ProductDetail = ({ params }: { params: { id: string } }) => {
 
     // Génération du breadcrumb
     const generateBreadcrumb = (pet: Pet) => {
-        return `Home > ${pet.category} > ${pet.category} > ${pet.name}`;
+        return `Home > ${pet.category} > ${pet.characteristics?.size} > ${pet.name}`;
     };
 
     // Affichage de l'état de chargement
@@ -132,7 +132,7 @@ const ProductDetail = ({ params }: { params: { id: string } }) => {
         <section>
             {/* Product Detail */}
             <div className="max-w-7xl mx-auto px-6 pb-12">
-                <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 border border-neutral-200 rounded-2xl p-4">
+                <div className="grid grid-cols-1 lg:grid-cols-2 lg:gap-12 gap-6 lg:border border-none border-neutral-200 rounded-2xl p-4">
                     {/* Left - Images */}
                     <div className="space-y-4">
                         {/* Main Image with Carousel */}
@@ -219,19 +219,19 @@ const ProductDetail = ({ params }: { params: { id: string } }) => {
                         )}
 
                         {/* Guarantees */}
-                        <div className="flex items-center justify-between rounded-xl p-4 bg-gradient-to-r from-[#FCEED5] via-[#FCEED5] to-[#FFE7BA]">
+                        <div className="hidden lg:flex items-center justify-between gap-4 flex-wrap rounded-xl p-4 bg-gradient-to-r from-[#FCEED5] via-[#FCEED5] to-[#FFE7BA]">
                             <div className="flex items-center text-sm text-neutral-60">
-                               <Image src="/images/pet.svg" alt="heart" width={20} height={20} />
+                                <Image src="/images/pet.svg" alt="heart" width={20} height={20} />
                                 <span>100% health guarantee for pets</span>
                             </div>
                             <div className="flex items-center space-x-2 text-sm text-neutral-60">
-                              <Image src="/images/guarantee.svg" alt="heart" width={20} height={20} />
+                                <Image src="/images/guarantee.svg" alt="heart" width={20} height={20} />
                                 <span>100% guarantee of pet identification</span>
                             </div>
                         </div>
 
                         {/* Social Share */}
-                        <div className="flex items-center space-x-4 pt-2">
+                        <div className="hidden lg:flex items-center space-x-4 pt-2">
                             <button className="text-primary-dark-blue-80 flex items-center gap-1 font-bold hover:text-primary-dark-blue-60 transition-colors">
                                 <IoShareSocialOutline /> Share:
                             </button>
@@ -253,7 +253,7 @@ const ProductDetail = ({ params }: { params: { id: string } }) => {
                     </div>
 
                     {/* Right - Product Info */}
-                    <div className="space-y-6">
+                    <div className="flex flex-col gap-4">
                         <div className="text-sm text-neutral-600">
                             {generateBreadcrumb(currentPet)}
                         </div>
@@ -266,21 +266,27 @@ const ProductDetail = ({ params }: { params: { id: string } }) => {
                             {currentPet.price?.formatted || `${currentPet.price?.amount?.toLocaleString()} ${currentPet.price?.currency}`}
                         </div>
 
-                        <div className="flex space-x-4">
-                            <Button variant="primary" size='md' className='text-white'>
+                        <div className="flex flex-wrap gap-4">
+                            <Button variant="primary" size='md' className='text-white sm:w-auto w-full'>
                                 Contact us
                             </Button>
-                            <Button variant="outline" size="md" className='text-neutral-700'>
+                            <Button variant="outline" size="md" className='text-neutral-700 sm:w-auto w-full'>
                                 <span className="flex items-center gap-2">
-                                <IoChatboxEllipsesOutline size={20} />                                    Chat with Monito
+                                    <IoChatboxEllipsesOutline size={20} />                                    Chat with Monito
                                 </span>
                             </Button>
                         </div>
 
                         {/* Product Details Table */}
                         <div className="space-y-4 pt-6">
+                            <div className='lg:hidden grid grid-cols-2 justify-between px-4'>
+                                <div className='text-primary-dark-blue-80 text-lg font-bold'>Informations</div>
+                                <button className="text-primary-dark-blue-80 flex items-center gap-1 font-bold hover:text-primary-dark-blue-60 transition-colors">
+                                    <IoShareSocialOutline /> Share:
+                                </button>
+                            </div>
                             <div className="grid grid-cols-1 gap-4 text-sm">
-                                <div className="space-y-3">
+                                <div className="">
                                     {[
                                         { label: 'SKU', value: `#${characteristics?.sku || 'N/A'}` },
                                         { label: 'Gender', value: characteristics?.gender || 'N/A' },
@@ -295,20 +301,29 @@ const ProductDetail = ({ params }: { params: { id: string } }) => {
                                         { label: 'Published Date', value: formatDate(characteristics?.publishedDate) },
                                         { label: 'Additional Information', value: characteristics?.additionalInfo || 'N/A' },
                                     ].map((item, index, array) => (
-                                        <div 
-                                            key={index} 
-                                            className={`grid grid-cols-3 text-left text-sm font-medium text-neutral-60 justify-between pb-2 ${
-                                                index < array.length - 1 ? 'border-b border-neutral-10' : ''
-                                            }`}
+                                        <div
+                                            key={index}
+                                            className={`grid lg:grid-cols-3 grid-cols-2 text-left text-sm font-medium text-neutral-60 justify-between p-4 ${index < array.length - 1 ? 'border-b border-neutral-10' : ''
+                                                }`}
                                         >
                                             <span className="col-span-1">{item.label}</span>
-                                            <span className="col-span-2">:{item.value}</span>
+                                            <span className="lg:col-span-2 col-span-1">:{item.value}</span>
                                         </div>
                                     ))}
                                 </div>
                             </div>
                         </div>
                     </div>
+                    <div className="lg:hidden flex items-center justify-between gap-4 flex-wrap rounded-xl p-4 bg-gradient-to-r from-[#FCEED5] via-[#FCEED5] to-[#FFE7BA]">
+                            <div className="flex items-center text-sm text-neutral-60">
+                                <Image src="/images/pet.svg" alt="heart" width={20} height={20} />
+                                <span>100% health guarantee for pets</span>
+                            </div>
+                            <div className="flex items-center space-x-2 text-sm text-neutral-60">
+                                <Image src="/images/guarantee.svg" alt="heart" width={20} height={20} />
+                                <span>100% guarantee of pet identification</span>
+                            </div>
+                        </div>
                 </div>
 
                 {/* Our lovely customer */}
