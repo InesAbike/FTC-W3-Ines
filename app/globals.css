@@ -30,8 +30,6 @@
 }
 
 @theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
 
 --color-primary-dark-blue: var(--primary-dark-blue);
 --color-primary-dark-blue-80: var(--primary-dark-blue-80);
@@ -61,8 +59,8 @@
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
+  background: var(--color-neutral-00);
+  color: var(--color-neutral-100);
   font-family: var(--font-gilroy), sans-serif;
 }
 
