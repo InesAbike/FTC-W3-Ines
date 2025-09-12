@@ -60,7 +60,7 @@
 
 body {
   background: var(--color-neutral-00);
-  color: var(--color-neutral-100);
+  color: var(--color-primary-dark-blue);
   font-family: var(--font-gilroy), sans-serif;
 }
 
