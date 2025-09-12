@@ -6,7 +6,6 @@ import Link from 'next/link';
 import { navLinks } from '@/constants';
 import SearchBar from './SearchBar';
 import { Currency, useCurrency } from '@/contexts/CurrencyContext';
-import { VN, FR } from 'country-flag-icons/react/3x2'
 
 
 const Navbar: React.FC = () => {
@@ -70,6 +69,7 @@ const Navbar: React.FC = () => {
             {
               navLinks.map((link) => (
                 <Link
+                  key={link.href}
                   href={link.href}
                   className="group relative text-primary-dark-blue hover:text-primary-dark-blue/80 font-medium transition-colors flex flex-col items-center"
                 >
