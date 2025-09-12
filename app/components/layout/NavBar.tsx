@@ -86,21 +86,15 @@ const Navbar: React.FC = () => {
               ))
             }
           </div>
-
-          {/* Search Bar - Desktop */}
-          <div className="hidden lg:flex items-center flex-1 max-w-md mx-8">
+          
+          <div className="flex items-center gap-4">
+          <div className="hidden lg:flex max-w-md">
             <SearchBar />
           </div>
-
-          {/* Right Side Actions */}
-          <div className="flex items-center gap-4">
-
-            {/* Search Icon - Mobile/Tablet */}
             <button className="lg:hidden p-2 text-primary-dark-blue hover:text-primary-dark-blue/80 transition-colors">
               <FiSearch className="h-5 w-5" />
             </button>
-
-            {/* Join Community Button */}
+            
             <button className="hidden md:inline-flex items-center px-6 py-2 space-x-2 bg-primary-dark-blue text-white rounded-full font-medium hover:bg-primary/90 transition-colors text-sm">
               Join the community
             </button>
