@@ -37,7 +37,7 @@ const CTA_2 = () => {
     }, []);
 
     return (
-        <section className='md:py-12 py-6 sm:px-6 lg:px-8 px-4 max-w-7xl mx-auto'>
+        <section className='md:py-12 py-6 sm:px-6 lg:px-8 px-4 max-w-7xl mx-auto md:flex hidden'>
                 <div className='bg-[#ffb775] rounded-2xl relative overflow-hidden'>
                     <Image
                         src="/images/decorations/cta2-decoration-1.png"

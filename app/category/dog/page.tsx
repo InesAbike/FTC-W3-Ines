@@ -9,8 +9,8 @@ import CTA from "@/components/category/CTA";
 import SmallDogs from "@/components/category/Dogs";
 
 const Page = () => {
-  const pathname = usePathname(); // Exemple: /dog/small-dog
-  const segments = pathname.split("/").filter(Boolean); // ["dog", "small-dog"]
+  const pathname = usePathname(); 
+  const segments = pathname.split("/").filter(Boolean); 
 
   return (
     <div>
@@ -26,9 +26,8 @@ const Page = () => {
             <BreadcrumbItem key={idx}>
               <Link href={href} className="text-neutral-60 text-sm font-medium">
                 {seg
-                  .replace(/-/g, " ") // remplace les tirets par des espaces
+                  .replace(/-/g, " ")
                   .replace(/\b\w/g, (c) => c.toUpperCase())}{" "}
-                {/* Met la 1re lettre en majuscule */}
               </Link>
             </BreadcrumbItem>
           );
