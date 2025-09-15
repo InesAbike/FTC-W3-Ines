@@ -250,7 +250,7 @@ const Navbar: React.FC = () => {
             className="w-full py-3 bg-primary-dark-blue text-white rounded-full font-medium hover:bg-primary-dark-blue/90 transition-colors text-base"
             onClick={toggleMobileMenu}
           >
-            Rejoindre la communauté
+       Join the community
           </button>
         </div>
       </div>
