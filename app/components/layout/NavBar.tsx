@@ -89,7 +89,7 @@ const Navbar: React.FC = () => {
                 >
                   <span className="relative z-10">{link.label}</span>
                   <svg
-                    className="absolute -rotate-45 -bottom-1 opacity-0 group-hover:opacity-100 transition-opacity duration-200 w-10 h-8 z-0"
+                    className="absolute -rotate-45 -bottom-1 opacity-0 group-hover:opacity-20 transition-opacity duration-200 w-10 h-8 -z-10"
                     viewBox="0 0 42 38"
                     fill="none"
                     xmlns="http://www.w3.org/2000/svg"
