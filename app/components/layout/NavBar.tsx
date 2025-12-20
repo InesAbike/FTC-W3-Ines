@@ -83,7 +83,7 @@ const Navbar: React.FC = () => {
             {
               navLinks.map((link) => (
                 <Link
-                  key={link.href}
+                  key={link.id}
                   href={link.href}
                   className="group relative text-primary-dark-blue hover:text-primary-dark-blue/80 font-medium transition-colors flex flex-col items-center"
                 >
@@ -195,7 +195,7 @@ const Navbar: React.FC = () => {
           <nav className="flex flex-col space-y-4 mb-6">
             {navLinks.map((link) => (
               <Link
-                key={link.href}
+                key={link.id}
                 href={link.href}
                 className="text-lg text-primary-dark-blue hover:text-primary-dark-blue/80 font-medium py-2 px-4 rounded-lg hover:bg-neutral-10 transition-colors"
                 onClick={toggleMobileMenu}
